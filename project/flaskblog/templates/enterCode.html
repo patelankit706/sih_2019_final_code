@@ -1,0 +1,26 @@
+{% extends "layout.html" %}
+{% block content %}
+		<form method="POST" action="">
+            {{ form.hidden_tag() }}
+            <fieldset class="form-group">
+                <legend class="border-bottom mb-4">Hi Seller</legend>
+                <div class="form-group">
+                    {{ form.uID.label(class="form-control-label") }}
+                    {% if form.uID.errors %}
+                        {{ form.uID(class="form-control form-control-lg is-invalid") }}
+                        <div class="invalid-feedback">
+                            {% for error in form.uID.errors %}
+                                <span>{{ error }}</span>
+                            {% endfor %}
+                        </div>
+                    {% else %}
+                        {{ form.uID(class="form-control form-control-lg") }}
+                    {% endif %}
+                </div>
+            </fieldset>
+            <div class="form-group">
+                {{ form.submit(class="btn btn-outline-info") }}
+            </div>
+        </form>
+
+{% endblock content %}

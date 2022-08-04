@@ -1,0 +1,14 @@
+{% extends "layout.html" %}
+{% block content %}
+<br>
+{% if current_user.typeUser==0 %}
+<a href="{{url_for('viewReport',iD=leng)}}">Show report</a><br>
+<a href="{{url_for('generateUID')}}">Generate UID</a><br>
+{% endif %}
+{% if current_user.typeUser==1 %}
+<a href="{{url_for('viewReport',iD=leng)}}">Show Report</a><br>
+{% endif %}
+{% if current_user.typeUser==2 %}
+<a href="{{url_for('enterCode')}}">Enter Code</a><br>
+{% endif %}
+{% endblock content %}

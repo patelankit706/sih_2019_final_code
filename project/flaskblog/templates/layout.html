@@ -1,0 +1,104 @@
+﻿
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title></title>
+
+
+
+    <script>
+        addEventListener("load", function () {
+            setTimeout(hideURLbar, 0);
+        }, false);
+
+        function hideURLbar() {
+            window.scrollTo(0, 1);
+        }
+    </script>
+
+	<!-- css files -->
+    <link href="{{ url_for('static', filename='bootstrap.css') }}" rel='stylesheet' type='text/css' /><!-- bootstrap css -->
+    <link href="{{ url_for('static', filename='style.css') }}" rel='stylesheet' type='text/css' /><!-- custom css -->
+    <link href="{{ url_for('static', filename='font-awesome.min.css') }}" rel="stylesheet"><!-- fontawesome css -->
+	<!-- //css files -->
+
+	<!-- google fonts -->
+	<link href="//fonts.googleapis.com/css?family=Source+Sans+Pro:200,200i,300,300i,400,400i,600,600i,700,700i,900,900i&amp;subset=cyrillic,cyrillic-ext,greek,greek-ext,latin-ext,vietnamese" rel="stylesheet">
+	<!-- //google fonts -->
+
+</head>
+<body>
+
+
+
+<!-- header -->
+<header>
+	<div class="container">
+		<div class="header d-lg-flex justify-content-between align-items-center">
+			<div class="header-agile">
+				<h1>
+					<a class="navbar-brand logo" href="{{ url_for('home') }}">
+						<span class="fa fa-anchor" aria-hidden="true"></span> Coal India Limited
+
+					</a>
+				</h1>
+			</div>
+			<div class="nav_w3ls">
+				<nav>
+					<label for="drop" class="toggle mt-lg-0 mt-1"><span class="fa fa-bars" aria-hidden="true"></span></label>
+					<input type="checkbox" id="drop" />
+						<ul class="menu">
+
+							{% if current_user.is_authenticated %}
+                    <li class="mr-lg-3 mr-2 active"><a href="{{ url_for('home') }}">Home</a></li>
+                     <li class="mr-lg-3 mr-2"><a href="{{ url_for('logout') }}">Log out</a></li>
+              {% else %}
+                      <li class="mr-lg-3 mr-2"><a href="{{ url_for('home') }}">Home</a></li>
+                      <li class="mr-lg-3 mr-2"><a href="{{ url_for('login') }}">Login</a></li>
+              {% endif %}
+
+						</ul>
+				</nav>
+			</div>
+
+		</div>
+	</div>
+</header>
+<!-- //header -->
+
+<!-- banner -->
+<section class="inner-page-banner" id="home">
+</section>
+<!-- //banner -->
+
+
+<div class="col-md-8">
+          {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+              {% for category, message in messages %}
+                <div class="alert alert-{{ category }}">
+                  {{ message }}
+                </div>
+              {% endfor %}
+            {% endif %}
+          {% endwith %}
+          {% block content %}{% endblock %}
+        </div>
+<!-- footer -->
+<footer class="py-5">
+	<div class="container">
+		<div class="row footer_grids pt-lg-3">
+
+
+
+		<!-- //move top -->
+		<div class="copyright text-center mt-3">
+			<centre><p>© 2019 Coal Blinding. All Rights Reserved | Design by <a href="http://blocks.hopto.org/"> Blocks</a> </p></centre>
+		</div>
+	</div>
+</footer>
+<!-- //footer -->
+
+
+</body>
+</html>

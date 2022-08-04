@@ -1,0 +1,16 @@
+{% extends "layout.html" %}
+{% block content %}
+<br>
+{% if current_user.typeUser==3 %}
+<a href="{{url_for('viewUser',iD=leng)}}">Delete user seller</a><br>
+<a href="{{url_for('adminAdd')}}">Add user seller</a><br>
+{% endif %}
+{% if current_user.typeUser==4 %}
+<a href="{{url_for('viewUser',iD=leng)}}">Delete user buyer</a><br>
+<a href="{{url_for('adminAdd')}}">Add user buyer</a><br>
+{% endif %}
+{% if current_user.typeUser==5 %}
+<a href="{{url_for('viewUser',iD=leng)}}">Delete lab user</a><br>
+<a href="{{url_for('adminAdd')}}">Add lab user</a><br>
+{% endif %}
+{% endblock content %}

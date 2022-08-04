@@ -1,0 +1,28 @@
+{% extends "layout.html" %}
+{% block content %}
+		<h3>generate UID for sample</h3><br>
+
+		<form method="POST" action="">
+            {{ form.hidden_tag() }}
+            <fieldset class="form-group">
+                <legend class="border-bottom mb-4">Hi Seller</legend>
+                <div class="form-group">
+                    {{ form.bID.label(class="form-control-label") }}
+                    {% if form.bID.errors %}
+                        {{ form.bID(class="form-control form-control-lg is-invalid") }}
+                        <div class="invalid-feedback">
+                            {% for error in form.bID.errors %}
+                                <span>{{ error }}</span>
+                            {% endfor %}
+                        </div>
+                    {% else %}
+                        {{ form.bID(class="form-control form-control-lg") }}
+                    {% endif %}
+                </div>
+            </fieldset>
+            <div class="form-group">
+                {{ form.submit(class="btn btn-outline-info") }}
+            </div>
+        </form>
+
+{% endblock content %}

@@ -1,0 +1,8 @@
+{% extends "layout.html" %}
+{% block content %}
+<br>
+{% for i in range(leng)%}
+    <br>
+    <a href="{{url_for('adminDel',iD=i)}}">Delete user {{i}} </a><br>
+{% endfor %}
+{% endblock content %}

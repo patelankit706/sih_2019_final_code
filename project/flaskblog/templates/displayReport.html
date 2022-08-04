@@ -1,0 +1,28 @@
+{% extends "layout.html" %}
+{% block content %}
+
+<br>
+<table>
+    <tr>
+        <td>SELLER&nbsp</td><td>BUYER&nbsp</td><td>LAB USER&nbsp</td><td>GROSS CALORIFIC VALUE&nbsp</td><td>NET CALORIFIC VALUE&nbsp</td><td>TESTING DATE</td>
+    </tr>
+      <tr>
+      <td>{{form.sID}}</td>&nbsp
+
+
+      <td>{{form.bID}}</td>&nbsp
+
+
+      <td>{{form.lID}}</td>&nbsp
+
+
+      <td>{{form.grossCalorificValue}}</td>&nbsp
+
+      <td>{{form.netCalorificValue}}</td>&nbsp
+
+      <td>{{form.testDate}}</td>&nbsp
+      </tr>
+
+
+</table>
+{% endblock content %}

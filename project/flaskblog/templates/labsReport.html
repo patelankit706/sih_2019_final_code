@@ -1,0 +1,58 @@
+
+{% extends "layout.html" %}
+{% block content %}
+<!-- register -->
+<div class="contact-w3l py-5" id="contact">
+	<div class="content-section">
+        <form method="POST" action="">
+            {{ form.hidden_tag() }}
+            <fieldset class="form-group">
+                <legend class="border-bottom mb-4">Lab Report</legend>
+                <div class="form-group">
+                    {{ form.uID.label(class="form-control-label") }}
+                    {% if form.uID.errors %}
+                        {{ form.uID(class="form-control form-control-lg is-invalid") }}
+                        <div class="invalid-feedback">
+                            {% for error in form.uID.errors %}
+                                <span>{{ error }}</span>
+                            {% endfor %}
+                        </div>
+                    {% else %}
+                        {{ form.uID(class="form-control form-control-lg") }}
+                    {% endif %}
+                </div>
+                <div class="form-group">
+                    {{ form.grossCalorificValue.label(class="form-control-label") }}
+                    {% if form.grossCalorificValue.errors %}
+                        {{ form.grossCalorificValue(class="form-control form-control-lg is-invalid") }}
+                        <div class="invalid-feedback">
+                            {% for error in form.grossCalorificValue.errors %}
+                                <span>{{ error }}</span>
+                            {% endfor %}
+                        </div>
+                    {% else %}
+                        {{ form.grossCalorificValue(class="form-control form-control-lg") }}
+                    {% endif %}
+                </div>
+								<div class="form-group">
+                    {{ form.netCalorificValue.label(class="form-control-label") }}
+                    {% if form.netCalorificValue.errors %}
+                        {{ form.netCalorificValue(class="form-control form-control-lg is-invalid") }}
+                        <div class="invalid-feedback">
+                            {% for error in form.netCalorificValue.errors %}
+                                <span>{{ error }}</span>
+                            {% endfor %}
+                        </div>
+                    {% else %}
+                        {{ form.netCalorificValue(class="form-control form-control-lg") }}
+                    {% endif %}
+                </div>
+            </fieldset>
+            <div class="form-group">
+                {{ form.submit(class="btn btn-outline-info") }}
+            </div>
+        </form>
+    </div>
+</div>
+<!-- //register -->
+{% endblock content %}

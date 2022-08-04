@@ -1,0 +1,7 @@
+{% extends "layout.html" %}
+{% block content %}
+{% for i in range(leng) %}
+<br>
+<a href="{{url_for('displayReport',iD=i)}}">Report {{i}}</a><br>
+{% endfor %}
+{% endblock content %}

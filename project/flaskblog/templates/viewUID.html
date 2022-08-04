@@ -1,0 +1,11 @@
+{% extends "layout.html" %}
+{% block content %}
+<br>
+{% if current_user.typeUser==0 %}
+<br>
+<h1>UID</h1>
+<br>
+<br>
+{{uID}}
+{% endif %}
+{% endblock content %}
