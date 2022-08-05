@@ -5,3 +5,5 @@ This Repository contains Smart India Hackathon 2019 finale code and documentatio
 * Ankit Patel (Leader)
 * Parth Tripathi (Co Leader)
 * Anubhav Trivedi
+* Mansee Agarawal 
+* Prachi Sahu
