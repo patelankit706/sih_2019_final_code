@@ -7,3 +7,4 @@ This Repository contains Smart India Hackathon 2019 finale code and documentatio
 * Anubhav Trivedi
 * Mansee Agarawal 
 * Prachi Sahu
+* Pinki Parmar
